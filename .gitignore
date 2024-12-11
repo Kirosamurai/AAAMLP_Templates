@@ -1,2 +1,2 @@
-/input/*.csv
-/models/*.bin
+ML_Template/input/*.csv
+ML_Template/models/*.bin
