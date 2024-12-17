@@ -1,6 +1,6 @@
 ML_Template/input/*.csv
 ML_Template/models/*.bin
 Cross_Validation/*.csv
-Categorical_Values/
-Categorical_Values_2/
+Categorical_Values/*.csv
+Categorical_Values_2/*.csv
 venv
