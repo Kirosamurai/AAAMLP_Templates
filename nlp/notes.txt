@@ -45,3 +45,31 @@ of components. Can use this on the matrix obtained from CountVectorizer or Tfidf
 ex- "i need a new dog" convert to "need new dog", who needs a new dog? we dk.
 
 DEEP LEARNING:
+
+word embeddings: words embeddings are vectors used to represent words. Google's word2vec, 
+FastText from facebook, GloVe from Stanford are all methods to create word embeddings.
+
+The basic idea is to build a shallow network that learns the embeddings for words by reconstruction
+of an input sentence. So, we can train a network to predict the missing word by using the surrounding 
+words and it will update the embeddings as it moves forward. This apporach is known as the
+Continuous Bag of Words or CBoW model. 
+
+We can also take one word as use it to predict the context words. Word2Vec uses this method.
+
+FastText learns embeddings for character n-grams instead.
+
+visualization: word embeddings can be viewed as vectors with linguistic context, for ex-
+germany - berlin + paris = france (removing the capital from a country and adding paris gives that country)
+This  is  not  always  true,  but  examples  like  these  are  useful  for 
+understanding the usefulness of word embeddings
+
+(king + woman = queen)
+
+sentences: adding embeddings for words can give embeddings for sentences.
+ex- hi, how are you? gives a sentence embedding after normalization.
+
+8. note that we can imagine a text data as a time series data, with each word 
+being a record in a continuous time, thus, we can use models primarily for time
+series data such as CNNs, GRUs, LSTMs etc. for them as well.
+
+
