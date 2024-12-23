@@ -3,4 +3,6 @@ ML_Template/models/*.bin
 Cross_Validation/*.csv
 Categorical_Values/*.csv
 Categorical_Values_2/*.csv
+image_classification_segmentation/input
+Hyperparameter_Optimization/input
 venv

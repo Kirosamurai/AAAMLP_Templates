@@ -1,0 +1,47 @@
+notes cuz my notebook was thrown out
+
+To appraoch NLP problems,
+
+1. For sentiment analysis, simple method would be to create a 
+list of good and bad words and count their occurences in the document
+and give a +ve/-ve sentiment depending on their counts.
+
+2. Simplest way, use a tokenizer to split it. CountVectorizer creates a sparse
+matrix of that document and counts how many times each word is used in the text.
+This creates a sparse matrix with the words as features, then we can use a model
+to predict the labels.
+
+3. Another method is the TF-IDF method.
+
+TF = (number of times a term t apprears)/(Total number of terms in the document)
+IDF = log(total number of documents/number of documents with term t in it)
+
+tf-idf = tf*idf
+
+this creates a sparse vector with tf-idf value for each word.
+(new benchmark now)
+
+4. n-grams: combinations of n words in order. ex-
+sentence = "hi, how are you?" into 3-grams give
+[('hi', ',', 'how'), 
+ (',', 'how', 'are'), 
+ ('how', 'are', 'you'), 
+ ('are', 'you', '?')] 
+
+this adds a bit of context into the data.
+** we can use this along with the above 2 methods to further
+icnrease the accuracy.
+
+5. stemming and lemmatization: "reducing the infected words to the root word"
+stemming gives the basic form of the root word, i.e. it may or may not make sense,
+lemmatization gives the root word which actually makes sense and is in a dictionary.
+
+adding this can also help improve the model, gives a bit more context.
+
+6. topic extraction: singular value decomposition, reduces the data into a given number
+of components. Can use this on the matrix obtained from CountVectorizer or TfidfVectorizer
+
+7. stopwords: not the best idea to remove them since we can incur a lot of information loss.
+ex- "i need a new dog" convert to "need new dog", who needs a new dog? we dk.
+
+DEEP LEARNING:
