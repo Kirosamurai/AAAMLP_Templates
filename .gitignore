@@ -6,4 +6,6 @@ Categorical_Values_2/*.csv
 image_classification_segmentation/siim
 Hyperparameter_Optimization/input
 nlp/input
+IMDBReviews/input
+*/input
 venv
