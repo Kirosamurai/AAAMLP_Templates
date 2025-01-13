@@ -1,0 +1,42 @@
+1. Ensembling is nothing but a cobination of differrent models. The simplest way
+to combine models would be to just do an average.
+
+Ensemble Prediction = (m1_proba + m2proba ........ + mnproba)/n
+This is the simplest way of combining models.
+
+imp: combination of models which are not highly correlated work better than the
+combination of models which are highly correlated.
+
+ex - model A - decision tree
+     model B - random forest
+     model C - logistic regression
+
+     model A+C gives better results than A+B
+
+2. If we do not have probabilities, we can combine predictions too by taking a vote.
+
+3. why do these work? errors can be minimized when we take averages. 
+
+4. probabilites can also be combined by weights as 
+w1m1 + w2m2 + w3m3 ....... wnmn where (w1 + w2 ...... + wn = 1)
+
+5. how do we optimize the combined models?
+    Step 1: create folds
+    Step 2: train models on folds x and predict on fold y
+    Step 3: train models on folds y and predict on fold x (from scratch)
+    Step 4: now,we take fold x and the predictions of fold x and create an optimization 
+            function that tries to find the best weights so as to maximise AUC against 
+            fold y.
+    
+6. Bagging - create small subsets of data and train multiple simple models.
+7. Boosting - Boosting models work similar to bagging models except for the fact that
+              consecutive models are trained on error residulas and tend to minimize the 
+              errors of preceding models. This can lead to overfitting however, as it can learn the data.
+
+8. For multi-class classification, voting is a decent approach, but when we have pred_probas, 
+   combining them would work better.
+
+9. Stacking - Stacking uses a meta-model to create predictions
+    i.e. - multiple models are trained use K-fold cross validation.
+           The results of these models are then used by the meta-model 
+           to train weights in order to best combine them.
